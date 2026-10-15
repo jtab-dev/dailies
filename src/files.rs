@@ -6,7 +6,7 @@
 // > The user's unlocked/locked characters
 // > The Idle-game's score
 
-#![allow(unused)] // REMOVE ONCE READY TO OPTOMIZE
+#![allow(unused)] // ************************************* REMOVE ONCE READY TO OPTOMIZE
 
 // --- Modules ---
 use serde::{Deserialize, Serialize};
@@ -43,11 +43,12 @@ fn make_goals() -> io::Result<()> {
     let mut list: Vec<Task> = Vec::<Task>::new();
 
     for i in 0..5 {
+        // Get user input
         let mut input = String::new();
-        io::stdin().read_line(&mut input); // Get user input
+        io::stdin().read_line(&mut input);
 
+        // Append user input to list as Task
         list.push(Task {
-            // Append user input as Task
             desc: input,
             is_done: false,
         });
