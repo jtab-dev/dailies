@@ -1,3 +1,11 @@
+// --- FILE MANAGER ---
+//
+// Meant to manage the user's files and store information locally
+// > The user's list of goals
+// > The Gacha Pool
+// > The user's unlocked/locked characters
+// > The Idle-game's score
+
 #![allow(unused)] // REMOVE ONCE READY TO OPTOMIZE
 
 // --- Modules ---
@@ -18,9 +26,11 @@ pub fn does_goals_exist() {
     // Check if goals.json file exists
     let file = Path::new("goals.json");
     if file.exists() {
-        edit_goals(); // If goals.json exists, allow the user to edit_goals
+        // If goals.json exists start editing goals
+        edit_goals();
     } else {
-        make_goals(); // If goals.json doesn't exist, allow the user to make_goals
+        // If goals.json doesn't exist, allow the user to make goals
+        make_goals();
     }
 }
 
