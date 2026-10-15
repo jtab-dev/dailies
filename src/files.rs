@@ -14,12 +14,17 @@ struct Task {
 }
 
 // --- Functions ---
-pub fn does_goals_exist() -> bool {
+pub fn does_goals_exist() {
     // Check if goals.json file exists
     //
     // If goals.json does exist, edit_goals
     // If does not exist, make_goals
-    false
+    let file = Path::new("gaols.json");
+    if file.exists() {
+        edit_goals();
+    } else {
+        make_goals();
+    }
 }
 
 fn make_goals() -> io::Result<()> {
