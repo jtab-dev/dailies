@@ -16,14 +16,11 @@ struct Task {
 // --- Functions ---
 pub fn does_goals_exist() {
     // Check if goals.json file exists
-    //
-    // If goals.json does exist, edit_goals
-    // If does not exist, make_goals
-    let file = Path::new("gaols.json");
+    let file = Path::new("goals.json");
     if file.exists() {
-        edit_goals();
+        edit_goals(); // If goals.json exists, allow the user to edit_goals
     } else {
-        make_goals();
+        make_goals(); // If goals.json doesn't exist, allow the user to make_goals
     }
 }
 
@@ -31,36 +28,22 @@ fn make_goals() -> io::Result<()> {
     // Create a .json storing the user's tasks
     let dir = File::create("goals.json")?;
 
+    // Prompt user to write at least 5 goals
     println!("Write at least 5 goals");
-    let mut list: Vec<Task> = vec![
-        Task {
-            desc: String::from(""),
-            is_done: false,
-        },
-        Task {
-            desc: String::from(""),
-            is_done: false,
-        },
-        Task {
-            desc: String::from(""),
-            is_done: false,
-        },
-        Task {
-            desc: String::from(""),
-            is_done: false,
-        },
-        Task {
-            desc: String::from(""),
-            is_done: false,
-        },
-    ];
+    let mut list: Vec<Task> = Vec::<Task>::new();
 
-    for task in &mut list {
+    for i in 0..5 {
         let mut input = String::new();
-        io::stdin().read_line(&mut input);
+        io::stdin().read_line(&mut input); // Get user input
 
-        task.desc = input;
+        list.push(Task {
+            // Append user input as Task
+            desc: input,
+            is_done: false,
+        });
     }
+
+    // Prompt user: Ask if done creating list
 
     serde_json::to_writer_pretty(dir, &list);
     Ok(())
