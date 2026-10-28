@@ -1,8 +1,8 @@
 # dailies
 
 > [!WARNING]
-> ***NOTE STILL IN ACTIVE DEVELOPMENT*** A
-> lot of features and mechanics are still entirely unfinished
+> ***NOTE STILL IN ACTIVE DEVELOPMENT*** \
+> A lot of features and mechanics are still entirely unfinished
 
 ## An idle TUI inspired by the ‘daily objective’ mechanics of Gacha Games
 
