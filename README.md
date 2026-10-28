@@ -1,10 +1,9 @@
-# dailies
+# dailies --- ***NOTE STILL IN ACTIVE DEVELOPMENT***
 
-## An idle-game inspired by the ‘daily objective’ mechanics of Gacha Games
+## An idle TUI inspired by the ‘daily objective’ mechanics of Gacha Games
 
-Built entirely in `Rust`, \
-`dailies` seeks to streamline your to-do list by rewarding consistent task completion
+Built entirely in `Rust`, `dailies` seeks to streamline your to-do list by rewarding consistent task completion
 
 - Make a list of daily tasks
 - Get through the day
-- Get rewarded with gacha-currency
+- Get rewarded with sweet-sweet gacha-rolls
