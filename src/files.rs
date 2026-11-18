@@ -64,7 +64,7 @@ fn make_goals() -> io::Result<()> {
         });
     }
 
-    // Prompt user: Ask if done creating list
+    // Prompt user: Ask if done creating list yep
 
     serde_json::to_writer_pretty(dir, &list).expect("Failed to write to JSON file");
     Ok(())
